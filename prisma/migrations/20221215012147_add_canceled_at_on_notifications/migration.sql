@@ -1,2 +1,2 @@
 -- AlterTable
-ALTER TABLE "Notification" ADD COLUMN "cenceledAt" DATETIME;
+ALTER TABLE "Notification" ADD COLUMN "canceledAt" DATETIME;
