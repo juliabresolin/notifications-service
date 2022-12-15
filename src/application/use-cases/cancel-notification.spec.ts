@@ -5,7 +5,7 @@ import { CancelNotification } from './cancel-notification';
 import { NotificationNotFound } from './errors/notification-not-found';
 
 describe('Cancel notification', () => {
-  it('should be able to cancel a notifications notification', async () => {
+  it('should be able to cancel a notification', async () => {
     const notificationRepository = new InMemoryNotificationRepository();
     const cancelNotification = new CancelNotification(notificationRepository);
 
@@ -20,8 +20,6 @@ describe('Cancel notification', () => {
     await cancelNotification.execute({
       notificationId: notification.id,
     });
-
-    console.log(notificationRepository.notifications[0]['canceledAt']);
 
     expect(notificationRepository.notifications[0].canceledAt).toEqual(
       expect.any(Date),
